@@ -13,3 +13,7 @@ This project is designed to be a playground where developers can discover and le
 We are the Ninja Association.
 
 We are contributors and collaborators of the Virtual Dojo.
+
+# Where Can I find the live project?
+
+[DojoAfterDark](www.dojoafterdark.com)
