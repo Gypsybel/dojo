@@ -28,6 +28,10 @@ app.config(function($routeProvider, $httpProvider) {
     templateUrl: 'partials/cbaut.html',
     controller: 'cbautController'
   })
+  .when('/schedule', {
+    templateUrl: 'partials/schedule.html',
+    controller: 'scheduleController'
+  })
   .otherwise({
     redirectTo: '/'
   });
