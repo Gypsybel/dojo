@@ -17,3 +17,4 @@ We are contributors and collaborators of the Virtual Dojo.
 # Where Can I find the live project?
 
 [DojoAfterDark](http://dojoafterdark.com)
+[DojoAfterDark Wiki](https://github.com/dojoAfterDark/dojo/wiki)
