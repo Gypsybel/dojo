@@ -1,6 +1,6 @@
 //index, new, delete, show, update
-var mongoose = require('mongoose');
-var Event = mongoose.model('Event');
+var mongoose = require('mongoose'); //we need mongoose to connect to the db
+var Event = mongoose.model('Event'); //we are using the Event model
 
 function EventsController(){
 	this.index = function(req, res){
