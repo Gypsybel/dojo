@@ -28,9 +28,9 @@ app.config(function($routeProvider, $httpProvider) {
     templateUrl: 'partials/cbaut.html',
     controller: 'cbautController'
   })
-  .when('/schedule', {
-    templateUrl: 'partials/schedule.html',
-    controller: 'scheduleController'
+  .when('/events', {
+    templateUrl: 'partials/events.html',
+    controller: 'eventsController'
   })
   .otherwise({
     redirectTo: '/'

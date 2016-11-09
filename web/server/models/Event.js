@@ -1,7 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var EventSchema = new mongoose.Schema({
-	name: {
+	title: {
+		type: String,
+		required: true,
+		minlength: 4,
+	},
+	description: {
 		type: String,
 		required: true,
 		minlength: 4,
@@ -13,6 +18,7 @@ var EventSchema = new mongoose.Schema({
 	date: {
 		type: Date,
 		required: true,
+		unique: true,
 	},
 	host: {
 		type: String,
