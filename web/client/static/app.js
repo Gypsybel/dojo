@@ -26,9 +26,9 @@ app.config(function($routeProvider, $httpProvider) {
     controller: 'mainController'
   })
   /* Nav */
-  .when('/schedule', {
-    templateUrl: 'partials/schedule.html',
-    controller: 'scheduleController'
+  .when('/events', {
+    templateUrl: 'partials/events.html',
+    controller: 'eventsController'
   })
   .when('/bookClub', {
     templateUrl: 'partials/bookClub.html'
