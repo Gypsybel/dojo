@@ -1,0 +1,14 @@
+#events h1,
+#events h2 {
+	margin: 2%;
+}
+#events form,
+#events table {
+	width: 75%;
+	margin: 2% 5% 5%;
+}
+
+#events form label {
+	display: block;
+	width: 75%;
+}
