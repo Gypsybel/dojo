@@ -3,19 +3,19 @@
 	<table class="table table-striped">
 		<thead>
 			<th>Event</th>
-			<th>Date</th>
-			<th>Description</th>
 			<th>Type</th>
+			<th>Date</th>
 			<th>Host</th>
+			<th>Description</th>
 			<th>Actions</th>
 		</thead>
 		<tbody>
 			<tr ng-repeat="event in events|orderBy:'date'">
 				<td>{{event.title}}</td>
-				<td>{{event.date|date:'yyyy-MM-dd H:mm':'+0600'}}</td>
-				<td>{{event.description}}</td>
 				<td>{{event.type}}</td>
+				<td>{{event.date|date:'yyyy-MM-dd':'+0600'}}</td>
 				<td>{{event.host}}</td>
+				<td>{{event.description}}</td>
 				<td>
 					<button class="btn btn-danger" ng-click='deleteEvent(event._id)'>Delete Event</button>
 				</td>
@@ -29,8 +29,6 @@
 	</div>
 	<form>
 		<label>Event Title: <input class="form-control" type="text" ng-model='myEvent.title'></label>
-		<label>Event Date: <input class="form-control" type="date" ng-model='myEvent.date'></label>
-		<label>Event Description: <textarea ng-model='myEvent.description' class="form-control" cols="30" rows="10"></textarea></label>
 		<label>Event Type: 
 			<select class="form-control" ng-model='myEvent.type'>
 				<option value="demo">Demo</option>
@@ -39,7 +37,9 @@
 				<option value="talk/lecture">Talk/Lecture</option>
 			</select>
 		</label>
+		<label>Event Date: <input class="form-control" type="date" ng-model='myEvent.date'></label>
 		<label>Event Host (optional): <input class="form-control" type="text" ng-model='myEvent.host'></label>
+		<label>Event Description: <textarea ng-model='myEvent.description' class="form-control" cols="30" rows="10"></textarea></label>
 		<button class="btn btn-default" ng-click='newEvent()'>Add Event</button>
 	</form>
 </div>
