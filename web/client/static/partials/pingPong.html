@@ -1,0 +1,213 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Leaderboard Side Bar -->
+    <div class="col-sm-2">
+      <h1 class="text-sm-center">Leaderboard</h1>
+      <h6 class="text-sm-center">Season 1</h6>
+      <!-- Dojo Wide Score -->
+      <h4 class="text-sm-center">Dojo Wide</h4>
+      <table class="table">
+      	<thead class="thead-inverse">
+      		<tr>
+      			<th>Name</th>
+      			<th>Wins</th>
+      			<th>Cohort</th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      		<tr>
+      			<td>Chris</td>
+      			<td>10</td>
+      			<td>June'16</td>
+      		</tr>
+      	</tbody>
+      </table>
+      <!-- Current User Cohort Score -->
+      <h4 class="text-sm-center">My Cohort</h4>
+      <table class="table">
+      	<thead class="thead-inverse">
+      		<tr>
+      			<th>Name</th>
+      			<th>Wins</th>
+      			<th>Cohort</th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      		<tr>
+      			<td>Chris</td>
+      			<td>10</td>
+      			<td>June'16</td>
+      		</tr>
+      	</tbody>
+      </table>
+      <!-- Overall Tournament Score -->
+      <h4 class="text-sm-center">Tournaments</h4>
+      <table class="table">
+      	<thead class="thead-inverse">
+      		<tr>
+      			<th>Name</th>
+      			<th>Wins</th>
+      			<th>Cohort</th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      		<tr>
+      			<td>Chris</td>
+      			<td>10</td>
+      			<td>June'16</td>
+      		</tr>
+      	</tbody>
+      </table>
+    </div>
+    <!-- End of Leaderboard Side Bar -->
+    
+    <!-- Center Content -->
+    <div class="col-sm-8">
+      <h1 class="text-sm-center">Ping Pong at the Doj!</h1>
+      <p>Insert video here</p>
+      <h2 class="text-sm-center">Message from: (King/Queen) Pong</h2>
+      <h3 class="text-sm-center">I am the best!</h3>
+      
+      <!-- Add Game Modal -->
+      <!-- Button trigger modal -->
+      <div class="text-sm-center">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addGameModal">
+          Add Game
+        </button>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="addGameModal" tabindex="-1" role="dialog"
+          aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title">Add A Game</h4>
+            </div>
+            <div class="container-fluid">
+              <div class="col-sm-6">
+                <label>Select a player
+                  <select>
+                    <option>Name of Person</option>
+                  </select>
+                </label>
+                <label>Insert games won
+                  <input type="number" placeholder="Wins">
+                </label>
+                <label>Insert games lost
+                  <input type="number" placeholder="Loss">
+                </label>
+              </div>
+              <div class="col-sm-6">
+                <label>Select a player
+                  <select>
+                    <option>Name of Person</option>
+                  </select>
+                </label>
+                <label>Insert games won  
+                  <input type="number" placeholder="Wins">
+                </label>
+                <label>Insert games lost
+                  <input type="number" placeholder="Loss">
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Add Game Modal -->
+      
+      <!-- Add Tournament Modal -->
+      <!-- Button trigger modal -->
+      <div class="text-sm-center">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addTournamentModal">
+          Add Tournament
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="addTournamentModal" tabindex="-1" role="dialog"
+          aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title">Add A Tournament</h4>
+            </div>
+            <div class="container-fluid">
+              <label># of players: <input type="number"></label>
+            </div>
+            
+<!-- 0CB Need to insert a function to build the bracket system here -->
+            
+            <!-- Upon selecting a number a bracket should build -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Add Tournament Modal -->
+      
+      <!-- Active Tournaments -->
+      <h4 class="text-sm-center">Active Tournaments</h4>
+      
+<!-- Any active tournament should display the bracket system here to be updated -->
+
+      <p>Place holder for bracket system</p>
+
+      <!-- Recent Games -->
+      <h4 class="text-sm-center">Recent Games</h4>
+      <table class="table">
+      	<thead class="thead-inverse">
+      		<tr>
+      			<th>Name</th>
+      			<th>Wins</th>
+      			<th>Loss</th>
+      			<th>Cohort</th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      		<tr>
+      			<td>Chris</td>
+      			<td>10</td>
+      			<td>10</td>
+      			<td>June'16</td>
+      		</tr>
+      	</tbody>
+      </table>
+      
+    </div>
+    <!-- End of Center Content -->
+    
+    <!-- My Tournaments Side Bar -->
+    <div class="col-sm-2">
+      <h4 class="text-sm-center">My Tournaments</h4>
+      <table class="table">
+      	<thead class="thead-inverse">
+      		<tr>
+      			<th>Name</th>
+      			<th>Wins</th>
+      			<th>Cohort</th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      		<tr>
+      			<td>Chris</td>
+      			<td>10</td>
+      			<td>June'16</td>
+      		</tr>
+      	</tbody>
+      </table>
+    </div>
+  </div>
+</div>
