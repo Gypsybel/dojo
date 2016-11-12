@@ -2,12 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UserSchema = new mongoose.Schema({
-  /*
-   * 0CB;
-   *
-   * To be implimented
-   */
-})
-
+  name: String,
+  email: String,
+  profilePic: String,
+  authId: String
+}, { timestamps: true });
 
 mongoose.model('User', UserSchema);

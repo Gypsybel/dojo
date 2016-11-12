@@ -1,7 +1,7 @@
 // Front End Routing
-var app = angular.module('dojoAfterDark', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'auth0.lock', 'angular-jwt']);
 
-app.config(function($routeProvider, $httpProvider) {
+app.config(function($routeProvider, lockProvider, $httpProvider) {
 /**
   * 0CB;
   * To be implimented
@@ -19,6 +19,19 @@ app.config(function($routeProvider, $httpProvider) {
     }
   );
 */
+  // $stateProvider
+  // .state('home', {
+  //   url: '/home',
+  //   controller: 'HomeController',
+  //   templateUrl: 'components/home/home.html',
+  //   controllerAs: 'vm'
+  // });
+
+  lockProvider.init({
+    clientID: 'T2rV7cD3BXPYk6MGz7hrWROKcxkB3OVe',
+    domain: 'dojo-after-dark.auth0.com'
+  });
+
   $routeProvider
   /* Root */
   .when('/', {
@@ -29,6 +42,10 @@ app.config(function($routeProvider, $httpProvider) {
   .when('/events', {
     templateUrl: 'partials/events.html',
     controller: 'eventsController'
+  })
+  .when('/login', {
+    templateUrl: 'partials/login.html',
+    controller: 'loginController'
   })
   .when('/bookClub', {
     templateUrl: 'partials/bookClub.html'
