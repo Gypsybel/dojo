@@ -1,4 +1,4 @@
-<div id="events">
+<div class="container" id="events">
 	<h1>Upcoming Events</h1>
 	<table class="table table-striped">
 		<thead class="thead-inverse">
@@ -25,7 +25,7 @@
 
 	<h2>Add a New DojoAfterDark Event!</h2>
 	<div ng-if='errors.length > 0'>
-		<p ng-repeat='error in errors'>{{error}}</p>
+		<p ng-repeat='error in errors'><span class="tag tag-warning">{{error}}</span></p>
 	</div>
 	<form>
 		<label>Event Title: <input class="form-control" type="text" ng-model='myEvent.title'></label>
