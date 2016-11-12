@@ -14,7 +14,10 @@ function EventsController(){
 	this.new = function(req, res){
 		var eventDate = new Date(req.body.date); //create a Date object based on the date of the event
 		var now = new Date(); //get the current date
-		if(eventDate < now){ //if the date of the event is smaller than today's date, we know the event date is in the past
+		var today = new Date(now.toISOString().slice(0,10)); //create a new date out of the current date, sliced to set the hours, minutes, seconds to 0
+		//that process actually gives us tomorrow
+		today.setDate(today.getDate() - 1); //so we get the current value of today (actually tomorrow) and set it to that minus one day
+		if(eventDate < today){ //if the date of the event is smaller than today's date, we know the event date is in the past
 			return res.json({'errors': 'Event must be in the future'}); //return an error message
 		} //if we pass the date validation
 		//we only want to allow 10 upcoming events at any one time
