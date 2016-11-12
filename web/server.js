@@ -32,5 +32,5 @@ require('./server/config/routes.js')(app);
 
 var port = 8000;
 app.listen(port, function() {
-  console.log("Your can find this at port: " + port);
+  console.log("You can find this at port: " + port);
 });

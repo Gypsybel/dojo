@@ -3,7 +3,6 @@ var User = mongoose.model('User');
 
 module.exports = {
   login: function(req, res) {
-    console.log(req.body.email, req.body.user_id, req.body.name, req.body.picture);
     User.findOneAndUpdate({ $or: [
       {
         authId:req.body.user_id
@@ -23,10 +22,8 @@ module.exports = {
         new: true
       }).exec(function(err, user) {
         if(err) {
-          console.log(err);
           res.status(500).json(err);
         } else {
-          console.log(user);
           req.session.user = user;
           res.json({user:user});
         }

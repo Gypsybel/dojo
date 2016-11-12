@@ -1,19 +1,19 @@
-app.service('authService', ['lock', 'authManager', '$rootScope', function(lock, authManager, $rootScope) {
+app.service('authService', ['lock', 'authManager', '$rootScope', '$http', '$location', 'usersFactory', function(lock, authManager, $rootScope, $http, $location, usersFactory) {
   function login() {
     lock.show();
   }
 
-  function logout() {
+  function logout(callback) {
     localStorage.removeItem('id_token');
-    localStorage.removeItem('profile');
     authManager.unauthenticate();
-    userProfile = {};
     $http({
       url: '/logout',
       method: 'get'
     }).then(function(response) {
       if(response.data.loggedOut) {
+        usersFactory.logout();
         $location.url('');
+        callback();
       }
     });
   }
@@ -28,12 +28,9 @@ app.service('authService', ['lock', 'authManager', '$rootScope', function(lock, 
       lock.getProfile(authResult.idToken, function(error, profile) {
         if (error) {
           console.log(error);
+        } else {
+          $rootScope.$broadcast('userProfileSet', profile);
         }
-
-        console.log(profile);
-
-        localStorage.setItem('profile', JSON.stringify(profile));
-        $rootScope.$broadcast('userProfileSet', profile);
       });
     });
   }

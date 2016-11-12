@@ -6,20 +6,23 @@ app.directive('header', function () {
     templateUrl: "/partials/header.html",
     controller: ['$scope', '$filter', 'authService', 'usersFactory', '$location', function ($scope, $filter, authService, usersFactory, $location) {
       $scope.login = authService.login;
-      $scope.logout = authService.logout;
+      $scope.logout = function() {
+        authService.logout(function() {
+          $scope.user = {};
+          $location.url('');
+        });
+      };
 
       $scope.user = {};
 
       usersFactory.getCurrentUser(function(response) {
-        console.log(response);
         $scope.user = response.user;
-        console.log($scope.user, 'inside getCurrentUser');
       });
 
       $scope.$on('userProfileSet', function(event, profile) {
-        console.log("I'm here", profile);
         usersFactory.login(profile, function(response) {
           if(response.data.user) {
+            $scope.user = response.data.user;
             $location.url('events');
           }
         });

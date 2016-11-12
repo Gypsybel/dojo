@@ -6,10 +6,13 @@ app.factory('usersFactory', ['$http', function($http) {
         url: '/login',
         method: 'post',
         data: user
-      }).then(callback);
+      }).then(function(response) {
+        currentUser = response.data.user;
+        callback(response);
+      });
     },
     getCurrentUser: function(callback) {
-      if(currentUser === undefined) {
+      if(currentUser.name === undefined) {
         $http({
           url: '/current_user',
           method: 'get'
@@ -19,16 +22,9 @@ app.factory('usersFactory', ['$http', function($http) {
       } else {
         callback({ user: currentUser });
       }
-      console.log(currentUser);
     },
-    logout: function(callback) {
-      $http({
-        url: '/logout',
-        method: 'get'
-      }).then(function(response) {
-        user = {};
-        callback();
-      });
+    logout: function() {
+      currentUser = {};
     }
   }
 }]);

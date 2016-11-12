@@ -28,9 +28,11 @@
     <li class="nav-item">
       <a class="nav-link" href="#/about">About</a>
     </li>
+  </ul>
+  <ul class="nav navbar-nav float-xs-right">
     <li class="nav-item">
-      <a ng-if="user === undefined" class="nav-link" ng-click="login()">Sign In</a>
-      <a ng-if="user !== undefined" class="nav-link" ng-click="logout()">Sign Out</a>
+      <a ng-if="user.name === undefined" class="nav-link" ng-click="login()">Sign In</a>
+      <a ng-if="user.name !== undefined" class="nav-link" ng-click="logout()">Sign Out</a>
     </li>
   </ul>
 </nav>
