@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="dojoAfterDark">
+<html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <title>Dojo After Dark</title>
@@ -10,13 +10,23 @@
   <!-- Load angular -->
   <script src="/angular/angular.min.js"></script>
   <script src="/angular-route/angular-route.min.js"></script>
+  <script src="/auth0-lock/build/lock.js"></script>
+  <script src="/angular-lock/dist/angular-lock.js"></script>
+  <script src="/angular-jwt/dist/angular-jwt.js"></script>
   <!-- Load app -->
   <script src="/app.js"></script>
+  <script src="/app.run.js"></script>
+  <!-- Services -->
+  <script src="/services/authService.js"></script>
+  <!-- Directives -->
+  <script src="/directives/header.js"></script>
+  <script src="/directives/footer.js"></script>
   <!-- Controllers -->
   <script src="/controllers/mainController.js"></script>
   <script src="/controllers/cbautController.js"></script>
   <script src="/controllers/eventsController.js"></script>
   <!-- Factories -->
+  <script src="/factories/usersFactory.js"></script>
   <script src="/factories/mainFactory.js"></script>
   <script src="/factories/eventsFactory.js"></script>
   
@@ -35,44 +45,12 @@
   <script src="https://use.fontawesome.com/ce0045dc33.js"></script>
 </head>
 <body>
-
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-dark bg-inverse">
-    <!-- Brand -->
-    <a class="navbar-brand neonText" href="#/">Dojo After Dark</a>
-    
-    <!-- Links -->
-    <ul class="nav navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#/events">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/ninjas">Ninjas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/pingPong">Ping Pong</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/bookClub">Book Club</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/games">Games</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/timeline">Timeline</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/projects">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/about">About</a>
-      </li>
-    </ul>
-  </nav>
+  <div header></div>
 
 <!-- Angular App here -->
-  <div ng-view="">
-  </div>
+  <div ng-view=""></div>
 
+  <div footer></div>
 </body>
 </html>
