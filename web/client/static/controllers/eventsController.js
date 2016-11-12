@@ -6,6 +6,7 @@ app.controller('eventsController', ['$scope', 'eventsFactory', '$location', func
 		$scope.events = events; //get all events from our factory
 	});
 	$scope.newEvent = function(){
+		$scope.errors = [];
 		eventsFactory.newEvent($scope.myEvent, function(event){ //send event info to factory, factory returns newly created event
 			if(!event['errors'] && !event['errmsg']){ //if no errors are returned
 				$scope.events.unshift(event); //add the new event to our array of events
@@ -15,8 +16,12 @@ app.controller('eventsController', ['$scope', 'eventsFactory', '$location', func
 					$scope.errors.push('Cannot schedule two events at the same time.')
 				}
 				if(event['errors']){
-					for(var key in event['errors']){
-						$scope.errors.push(event['errors'][key].message.replace('Path ', ''));
+					if(typeof(event['errors']) != 'string'){
+						for(var key in event['errors']){
+							$scope.errors.push(event['errors'][key].message.replace('Path ', ''));
+						}
+					} else {
+						$scope.errors.push(event['errors']);
 					}
 				}
 			}
@@ -31,6 +36,7 @@ app.controller('eventsController', ['$scope', 'eventsFactory', '$location', func
 			}
 		eventsFactory.deleteEvent(eventId); //send _id of event to be removed to factory, so it will be removed from the database
 	};
+	//this functionality not enabled yet - COMING SOON
 	$scope.showEvent = function(eventId){
 		eventsFactory.showEvent(eventId, function(event){ //send id of event to show to factory
 			$scope.event = event; //set scope event to event returned to factory

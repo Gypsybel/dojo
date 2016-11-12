@@ -1,11 +1,11 @@
 #events h1,
 #events h2 {
-	margin: 2%;
+	margin: 2% 0;
 }
 #events form,
 #events table {
 	width: 75%;
-	margin: 2% 5% 5%;
+	margin: 2% 0 5%;
 }
 
 #events form label {
