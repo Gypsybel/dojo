@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-inverse">
-  <!-- Brand -->
+  <!-- Neon Signage -->
   <a class="navbar-brand neonText" href="#/">
     <div class="logo"><b><i class="fa fa-moon-o" aria-hidden="true"></i> D<span>ojo </span>A<span>fter </span>D<span>ark</span></b></div>
   </a>
@@ -55,6 +55,7 @@
       </a>
     </li>
   </ul>
+  
   <ul class="nav navbar-nav float-xs-right">
     <!-- Weather -->
     <li class="nav-item" ng-if="user.name !== undefined">
@@ -63,6 +64,23 @@
         Burbank: {{weather.data.main.temp}} F
       </a>
     </li>
+    <!-- End of Weather -->
+    
+    <!-- Notifications -->
+    <li class="nav-item" ng-if="user.name !== undefined">
+<!-- 
+   - CB0;
+   - Should open up a modal of notications
+   - Ex. Pending ping pong confirmations
+ -->
+      <a href="">
+        <i class="fa fa-globe fa-2x" aria-hidden="true"></i>
+        <span class="tag tag-default tag-pill float-xs-right">2</span>
+      </a>
+    </li>
+    <!-- End of Notifications -->
+    
+    <!-- Login -->
     <li class="nav-item">
       <a ng-if="user.name === undefined" class="nav-link" ng-click="login()">
         <i class="fa fa-sign-in" aria-hidden="true"></i>
@@ -73,5 +91,6 @@
         Sign Out
       </a>
     </li>
+    <!-- End of Login -->
   </ul>
 </nav>
