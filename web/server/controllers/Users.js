@@ -3,6 +3,7 @@ var User = mongoose.model('User');
 
 module.exports = {
   login: function(req, res) {
+    var profilePic = req.body.picture_large ? req.body.picture_large : req.body.picture;
     User.findOneAndUpdate({ $or: [
       {
         authId:req.body.user_id
@@ -14,7 +15,7 @@ module.exports = {
       {
         name: req.body.name,
         email: req.body.email,
-        profilePic: req.body.picture,
+        profilePic: profilePic,
         authId: req.body.user_id
       },
       {
