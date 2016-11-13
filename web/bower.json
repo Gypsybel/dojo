@@ -17,6 +17,9 @@
   ],
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "auth0-lock": "^10.6.1",
+    "angular-lock": "^1.0.5",
+    "angular-jwt": "^0.1.7"
   }
 }

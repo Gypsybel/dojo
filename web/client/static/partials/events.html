@@ -1,3 +1,5 @@
+<!-- Events Css -->
+<link rel="stylesheet" href="assets/css/events.css">
 <div class="container" id="events">
 	<h1>Upcoming Events</h1>
 	<table class="table table-striped">
@@ -40,6 +42,6 @@
 		<label>Event Date: <input class="form-control" type="date" ng-model='myEvent.date'></label>
 		<label>Event Host (optional): <input class="form-control" type="text" ng-model='myEvent.host'></label>
 		<label>Event Description: <textarea ng-model='myEvent.description' class="form-control" cols="30" rows="10"></textarea></label>
-		<button class="btn btn-default" ng-click='newEvent()'>Add Event</button>
+		<button class="btn btn-default" ng-click='newEvent()'><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
 	</form>
 </div>

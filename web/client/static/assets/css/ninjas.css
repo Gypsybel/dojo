@@ -1,4 +1,13 @@
-#ninjas img{
-  max-width: 100%;
+.profile-pic {
+  width: 10em;
   height: auto;
+}
+.dark {
+  background-color: #333; 
+  border-color: #333;
+}
+.card-columns {
+    -webkit-column-count:4;
+    -moz-column-count:4;
+    column-count:4;
 }
