@@ -37,6 +37,14 @@ module.exports = {
       res.json({ user: {} });
     }
   },
+  getAllUsers: function(req, res) {
+    User.find({}, function(err, users) {
+      if(err) {
+        return res.json(err);
+      }
+      return res.json(users);
+    });      
+  },
   logout: function(req, res) {
     req.session.destroy();
     res.json({loggedOut:true});

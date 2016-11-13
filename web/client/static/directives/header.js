@@ -4,7 +4,8 @@ app.directive('header', function () {
     replace: true,
     // scope: { user: '=' }, // This is one of the cool things :). Will be explained in post.
     templateUrl: "/partials/header.html",
-    controller: ['$scope', '$filter', 'authService', 'usersFactory', '$location', function ($scope, $filter, authService, usersFactory, $location) {
+    controller: ['$scope', '$filter', 'authService', 'usersFactory', 'mainFactory', '$location', function ($scope, $filter, authService, usersFactory, mainFactory, $location) {
+      
       $scope.login = authService.login;
       $scope.logout = function() {
         authService.logout(function() {
@@ -23,7 +24,13 @@ app.directive('header', function () {
         usersFactory.login(profile, function(response) {
           if(response.data.user) {
             $scope.user = response.data.user;
-            $location.url('events');
+            
+            // Grab the weather after successfully logging in
+            $scope.weather = {};
+            mainFactory.getWeather(function(weather) {
+              $scope.weather = weather;
+            });
+            $location.url('ninjas');
           }
         });
       });

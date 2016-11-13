@@ -57,6 +57,13 @@
     </li>
   </ul>
   <ul class="nav navbar-nav float-xs-right">
+    <!-- Weather -->
+    <li class="nav-item" ng-if="user.name !== undefined">
+      <a class="nav-link" href="http://openweathermap.org/city/5331835" target="_blank">
+        <i class="fa fa-sun-o" style="color: grey" aria-hidden="true"></i>
+        Burbank: {{weather.data.main.temp}} F
+      </a>
+    </li>
     <li class="nav-item">
       <a ng-if="user.name === undefined" class="nav-link" ng-click="login()">
         <i class="fa fa-sign-in" aria-hidden="true"></i>

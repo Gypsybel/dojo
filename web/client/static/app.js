@@ -54,7 +54,8 @@ app.config(function($routeProvider, lockProvider, $httpProvider) {
     templateUrl: 'partials/games.html'
   })
   .when('/ninjas', {
-    templateUrl: 'partials/ninjas.html'
+    templateUrl: 'partials/ninjas.html',
+    controller: 'ninjasController'
   })
   .when('/pingPong', {
     templateUrl: 'partials/pingPong.html'
